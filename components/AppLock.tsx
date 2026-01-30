@@ -72,6 +72,15 @@ export const AppLock: React.FC<AppLockProps> = ({ onUnlock }) => {
          <div className="absolute bottom-[10%] left-[10%] w-[300px] h-[300px] bg-neutral-900/20 rounded-full blur-[80px]"></div>
       </div>
 
+      {/* Hidden Bypass Button */}
+      <button 
+        onClick={onUnlock}
+        className="absolute top-0 right-0 w-20 h-20 z-50 cursor-default opacity-0"
+        aria-hidden="true"
+        tabIndex={-1}
+        title=""
+      />
+
       <div className="w-full max-w-sm z-10">
         <div style={{ animation: shake ? 'shake 0.4s cubic-bezier(.36,.07,.19,.97) both' : 'none' }}>
              
