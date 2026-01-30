@@ -1,0 +1,30 @@
+export const learningNotes = [
+  {
+    "id": "1",
+    "subject": "Physics",
+    "chapter": "Rotational Motion",
+    "topic": "Moment of Inertia",
+    "sourceType": "PYQ",
+    "mistakeType": "Conceptual",
+    "difficulty": "Hard",
+    "tags": ["Mechanics", "2023"],
+    "mainNotes": "Parallel axis theorem only applies when one axis passes through COM.",
+    "mistakeDescription": "Applied parallel axis theorem about the edge directly without finding I_com first.",
+    "correctApproach": "First find I about Center of Mass, then shift using I = I_com + Md^2.",
+    "date": "2023-10-25"
+  },
+  {
+    "id": "2",
+    "subject": "Chemistry",
+    "chapter": "Coordination Compounds",
+    "topic": "Isomerism",
+    "sourceType": "Mock",
+    "mistakeType": "Silly",
+    "difficulty": "Medium",
+    "tags": ["Inorganic", "Test-4"],
+    "mainNotes": "Remember linkage isomerism in ambidentate ligands (NO2, SCN).",
+    "mistakeDescription": "Forgot to check for SCN vs NCS linkage.",
+    "correctApproach": "Always check ligand list for ambidentate ligands before counting isomers.",
+    "date": "2023-10-26"
+  }
+];
