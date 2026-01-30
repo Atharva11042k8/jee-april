@@ -1,55 +1,6 @@
 [
   {
-    "id": "1",
-    "name": "PYQ Tracking - Physics",
-    "columns": [
-      { "id": "c1", "title": "Chapter", "type": "simple" },
-      { 
-        "id": "c2", 
-        "title": "PYQs Completed", 
-        "type": "grouped",
-        "subColumns": [
-          { "id": "sc1", "title": "2022" },
-          { "id": "sc2", "title": "2023" },
-          { "id": "sc3", "title": "2024" }
-        ]
-      },
-      { "id": "c3", "title": "Status", "type": "simple" }
-    ],
-    "rows": [
-      {
-        "id": "r1",
-        "data": {
-          "c1": "Kinematics",
-          "c2": {
-            "sc1": "Done",
-            "sc2": "Pending",
-            "sc3": "Done"
-          },
-          "c3": "In Progress"
-        },
-        "notes": "Need to revise relative motion river-boat problems."
-      },
-      {
-        "id": "r2",
-        "data": {
-          "c1": "Newton Laws",
-          "c2": {
-            "sc1": "Done",
-            "sc2": "Done",
-            "sc3": "Done"
-          },
-          "c3": "Mastered"
-        },
-        "notes": ""
-      }
-    ]
-  },
-
-
-
-  {
-    "id": "2",
+    "id": "3",
     "name": "PYQ Tracking - Physics",
     "columns": [
       { "id": "c1", "title": "Chapter", "type": "simple" },
@@ -293,10 +244,4 @@
       }
     ]
   }
-
-
-
-
-
-  
 ]
