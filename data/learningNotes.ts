@@ -14,17 +14,17 @@ export const learningNotes = [
     "date": "2026-01-30"
   },
   {
-    "id": "",
-    "subject": "",
+    "id": "2",
+    "subject": "miscillaneous",
     "chapter": "",
     "topic": "",
     "sourceType": "",
     "mistakeType": "",
     "difficulty": "",
     "tags": ["", ""],
-    "mainNotes": "",
-    "mistakeDescription": "",
-    "correctApproach": "",
+    "mainNotes": "har word ka apna ek meaning hai",
+    "mistakeDescription": "aagar formula ki koi value given nahi toh dont assumne it till last",
+    "correctApproach": "aagar kuch hint given nahi hai then assume it",
     "date": ""
   }
 ];
