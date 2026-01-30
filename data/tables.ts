@@ -57,7 +57,7 @@ export const tables = [
         id: "r5",
         data: {
           c1: "Circular Motion",
-          c2: "Done",
+          c2: "✓",
           c3: { sc1: "", sc2: "", sc3: "" }
         },
         notes: "Theory completed"
@@ -67,7 +67,7 @@ export const tables = [
         data: {
           c1: "Work, Power & Energy (WPE)",
           c2: "Not Started",
-          c3: { sc1: "", sc2: "", sc3: "" }
+          c3: { sc1: "", sc2: "", sc3: "" }Done
         },
         notes: ""
       },
@@ -84,8 +84,8 @@ export const tables = [
         id: "r8",
         data: {
           c1: "Rotational Motion",
-          c2: "Done",
-          c3: { sc1: "", sc2: "Done", sc3: "" }
+          c2: "✓",
+          c3: { sc1: "", sc2: "✓", sc3: "✓" }
         },
         notes: "Theory + 2025 PYQs done"
       },
