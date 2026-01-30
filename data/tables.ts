@@ -67,7 +67,7 @@ export const tables = [
         data: {
           c1: "Work, Power & Energy (WPE)",
           c2: "Not Started",
-          c3: { sc1: "", sc2: "", sc3: "" }Done
+          c3: { sc1: "", sc2: "", sc3: "" }
         },
         notes: ""
       },
