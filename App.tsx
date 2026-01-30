@@ -1,11 +1,31 @@
 import React, { useState } from 'react';
 import { NotesManager } from './components/NotesManager';
 import { PlanningSystem } from './components/PlanningSystem';
+import { AppLock } from './components/AppLock';
 import { MOCK_NOTES } from './constants';
-import { BookOpen, Table, GraduationCap } from 'lucide-react';
+import { BookOpen, Table, GraduationCap, Lock } from 'lucide-react';
 
 const App: React.FC = () => {
+  // Check sessionStorage for existing session on initial load
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return sessionStorage.getItem('jee_command_auth') === 'true';
+  });
+  
   const [activeView, setActiveView] = useState<'learning' | 'planning'>('learning');
+
+  const handleUnlock = () => {
+    sessionStorage.setItem('jee_command_auth', 'true');
+    setIsAuthenticated(true);
+  };
+
+  const handleLock = () => {
+    sessionStorage.removeItem('jee_command_auth');
+    setIsAuthenticated(false);
+  };
+
+  if (!isAuthenticated) {
+    return <AppLock onUnlock={handleUnlock} />;
+  }
 
   return (
     <div className="min-h-screen bg-black text-neutral-200 font-sans selection:bg-indigo-500/30 flex flex-col">
@@ -50,10 +70,16 @@ const App: React.FC = () => {
             </button>
           </div>
 
-          {/* Status Indicator (Right side placeholder) */}
-          <div className="flex items-center gap-2">
+          {/* Controls */}
+          <div className="flex items-center gap-3">
+             <button 
+                onClick={handleLock}
+                className="p-2 text-neutral-500 hover:text-white transition-colors"
+                title="Lock System"
+             >
+                <Lock className="w-5 h-5" />
+             </button>
              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_10px_rgba(16,185,129,0.5)]"></span>
-             <span className="text-xs font-mono text-neutral-500 hidden sm:inline-block">SYSTEM ONLINE</span>
           </div>
 
         </div>
