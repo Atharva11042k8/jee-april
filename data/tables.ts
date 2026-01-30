@@ -1,16 +1,17 @@
 export const tables = [
+ [
   {
-    "id": "1",
+    "id": "3",
     "name": "PYQ Tracking - Physics",
     "columns": [
       { "id": "c1", "title": "Chapter", "type": "simple" },
-      { 
-        "id": "c2", 
-        "title": "PYQs Completed", 
+      {
+        "id": "c2",
+        "title": "PYQs Completed",
         "type": "grouped",
         "subColumns": [
-          { "id": "sc1", "title": "2022" },
-          { "id": "sc2", "title": "2023" },
+          { "id": "sc1", "title": "2026" },
+          { "id": "sc2", "title": "2025" },
           { "id": "sc3", "title": "2024" }
         ]
       },
@@ -20,29 +21,230 @@ export const tables = [
       {
         "id": "r1",
         "data": {
-          "c1": "Kinematics",
-          "c2": {
-            "sc1": "Done",
-            "sc2": "Pending",
-            "sc3": "Done"
-          },
-          "c3": "In Progress"
+          "c1": "Units & Measurements (UOM)",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
         },
-        "notes": "Need to revise relative motion river-boat problems."
+        "notes": ""
       },
       {
         "id": "r2",
         "data": {
-          "c1": "Newton Laws",
-          "c2": {
-            "sc1": "Done",
-            "sc2": "Done",
-            "sc3": "Done"
-          },
-          "c3": "Mastered"
+          "c1": "Vectors",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r3",
+        "data": {
+          "c1": "Kinematics",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r4",
+        "data": {
+          "c1": "Newton’s Laws of Motion (NLM)",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r5",
+        "data": {
+          "c1": "Circular Motion",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "In Progress"
+        },
+        "notes": "Theory completed"
+      },
+      {
+        "id": "r6",
+        "data": {
+          "c1": "Work, Power & Energy (WPE)",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r7",
+        "data": {
+          "c1": "Centre of Mass (COM)",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r8",
+        "data": {
+          "c1": "Rotational Motion",
+          "c2": { "sc1": "Pending", "sc2": "Done", "sc3": "Pending" },
+          "c3": "In Progress"
+        },
+        "notes": "Theory + 2025 PYQs done"
+      },
+      {
+        "id": "r9",
+        "data": {
+          "c1": "Gravitation",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r10",
+        "data": {
+          "c1": "Heat & Thermodynamics",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r11",
+        "data": {
+          "c1": "Properties of Matter",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r12",
+        "data": {
+          "c1": "Electrostatics",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r13",
+        "data": {
+          "c1": "Capacitors",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r14",
+        "data": {
+          "c1": "Current Electricity",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r15",
+        "data": {
+          "c1": "Magnetic Effect of Current",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r16",
+        "data": {
+          "c1": "Magnetic Properties of Matter",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r17",
+        "data": {
+          "c1": "Electromagnetic Induction (EMI)",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r18",
+        "data": {
+          "c1": "Alternating Current (AC)",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r19",
+        "data": {
+          "c1": "Semiconductors",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r20",
+        "data": {
+          "c1": "Modern Physics",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r21",
+        "data": {
+          "c1": "Simple Harmonic Motion (SHM)",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r22",
+        "data": {
+          "c1": "Waves",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r23",
+        "data": {
+          "c1": "Electromagnetic Waves",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r24",
+        "data": {
+          "c1": "Wave Optics",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
+        },
+        "notes": ""
+      },
+      {
+        "id": "r25",
+        "data": {
+          "c1": "Ray Optics",
+          "c2": { "sc1": "Pending", "sc2": "Pending", "sc3": "Pending" },
+          "c3": "Not Started"
         },
         "notes": ""
       }
     ]
   }
+]
+
 ];
