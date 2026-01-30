@@ -1,5 +1,4 @@
 export const tables = [
- [
   {
     "id": "3",
     "name": "PYQ Tracking - Physics",
@@ -245,6 +244,5 @@ export const tables = [
       }
     ]
   }
-]
 
 ];
