@@ -8,7 +8,7 @@
     "mistakeType": "Conceptual",
     "difficulty": "Hard",
     "tags": ["Mechanics", "2023"],
-    "mainNotes": "Parallel axis theorem only applies when one axis passes through COM.",
+    "mainNotes": "rotation atharva",
     "mistakeDescription": "Applied parallel axis theorem about the edge directly without finding I_com first.",
     "correctApproach": "First find I about Center of Mass, then shift using I = I_com + Md^2.",
     "date": "2023-10-25"
