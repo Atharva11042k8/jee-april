@@ -128,6 +128,7 @@ export const NotesManager: React.FC<NotesManagerProps> = ({ initialNotes }) => {
               <option value="Physics">Physics</option>
               <option value="Chemistry">Chemistry</option>
               <option value="Maths">Maths</option>
+              <option value="miscillaneous">miscillaneous</option>
             </select>
             <input 
               placeholder="Chapter Name" 
