@@ -66,6 +66,7 @@ export const NotesManager: React.FC<NotesManagerProps> = ({ initialNotes }) => {
       case 'Physics': return 'bg-cyan-950/30 text-cyan-400 border-cyan-900/50';
       case 'Chemistry': return 'bg-emerald-950/30 text-emerald-400 border-emerald-900/50';
       case 'Maths': return 'bg-rose-950/30 text-rose-400 border-rose-900/50';
+      case 'miscillaneous': return 'bg-blue-950/30 text-blue-400 border-blue-900/50';
     }
   };
 
