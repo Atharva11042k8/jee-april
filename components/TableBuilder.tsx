@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PlanningTable, Column, TableRow, SubColumn } from '../types';
-import { Plus, Trash2, ChevronRight, ChevronDown, MoreHorizontal, Layout, Maximize2 } from 'lucide-react';
+import { Plus, Trash2, ChevronRight, ChevronDown, Maximize2, Minimize2, Save } from 'lucide-react';
 
 interface TableBuilderProps {
   initialTables: PlanningTable[];
@@ -9,6 +9,7 @@ interface TableBuilderProps {
 export const TableBuilder: React.FC<TableBuilderProps> = ({ initialTables }) => {
   const [tables, setTables] = useState<PlanningTable[]>(initialTables);
   const [activeTableId, setActiveTableId] = useState<string>(initialTables[0]?.id || '');
+  const [isFullScreen, setIsFullScreen] = useState(false);
 
   const activeTable = tables.find(t => t.id === activeTableId);
 
@@ -75,7 +76,7 @@ export const TableBuilder: React.FC<TableBuilderProps> = ({ initialTables }) => 
   if (tables.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-64 text-neutral-500">
-        <Layout className="w-12 h-12 mb-4 opacity-50"/>
+        <Plus className="w-12 h-12 mb-4 opacity-50"/>
         <p>No tables created yet.</p>
         <button onClick={addTable} className="mt-4 text-indigo-400 hover:underline">Create your first tracker</button>
       </div>
@@ -84,46 +85,62 @@ export const TableBuilder: React.FC<TableBuilderProps> = ({ initialTables }) => 
 
   return (
     <div className="flex flex-col h-full space-y-6">
-      {/* Table Selector Tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto border-b border-neutral-800 pb-1">
-        {tables.map(table => (
-          <button
-            key={table.id}
-            onClick={() => setActiveTableId(table.id)}
-            className={`px-4 py-2 rounded-t-lg text-sm font-medium transition-colors whitespace-nowrap ${
-              activeTableId === table.id
-                ? 'bg-neutral-800 text-indigo-400 border-b-2 border-indigo-500'
-                : 'text-neutral-500 hover:text-neutral-300 hover:bg-neutral-900/50'
-            }`}
-          >
-            {table.name}
-          </button>
-        ))}
-        <button onClick={addTable} className="p-2 text-neutral-500 hover:text-indigo-400 transition-colors">
-          <Plus className="w-5 h-5" />
-        </button>
-      </div>
+      {/* Table Selector Tabs - Hidden in fullscreen mode */}
+      {!isFullScreen && (
+        <div className="flex items-center gap-2 overflow-x-auto border-b border-neutral-800 pb-1">
+            {tables.map(table => (
+            <button
+                key={table.id}
+                onClick={() => setActiveTableId(table.id)}
+                className={`px-4 py-2 rounded-t-lg text-sm font-medium transition-colors whitespace-nowrap ${
+                activeTableId === table.id
+                    ? 'bg-neutral-800 text-indigo-400 border-b-2 border-indigo-500'
+                    : 'text-neutral-500 hover:text-neutral-300 hover:bg-neutral-900/50'
+                }`}
+            >
+                {table.name}
+            </button>
+            ))}
+            <button onClick={addTable} className="p-2 text-neutral-500 hover:text-indigo-400 transition-colors">
+            <Plus className="w-5 h-5" />
+            </button>
+        </div>
+      )}
 
       {activeTable && (
-        <div className="flex-1 flex flex-col min-h-0 bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg">
+        <div className={`${
+            isFullScreen 
+                ? 'fixed inset-0 z-[100] bg-black p-4 w-screen h-screen flex flex-col' 
+                : 'flex-1 flex flex-col min-h-0 bg-neutral-900 border border-neutral-800 rounded-xl overflow-hidden shadow-lg'
+        }`}>
             {/* Toolbar */}
-            <div className="p-3 border-b border-neutral-800 bg-neutral-900/80 flex justify-between items-center backdrop-blur">
-                <div className="flex gap-2">
+            <div className={`p-3 border-b border-neutral-800 bg-neutral-900/80 flex justify-between items-center backdrop-blur shrink-0 ${isFullScreen ? 'rounded-t-xl' : ''}`}>
+                <div className="flex gap-2 items-center">
                     <button onClick={addRow} className="flex items-center px-3 py-1.5 bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-medium rounded transition-colors">
                         <Plus className="w-3 h-3 mr-1" /> Add Row
                     </button>
                      <div className="h-6 w-[1px] bg-neutral-700 mx-2"></div>
                     <span className="text-xs text-neutral-500 flex items-center">
-                        <Maximize2 className="w-3 h-3 mr-1"/> Auto-save active
+                        <Save className="w-3 h-3 mr-1 opacity-70"/> Auto-save active
                     </span>
                 </div>
-                <div className="text-xs text-neutral-500">
-                    {activeTable.rows.length} rows • {activeTable.columns.length} columns
+                
+                <div className="flex items-center gap-4">
+                     <div className="text-xs text-neutral-500 hidden sm:block">
+                        {activeTable.rows.length} rows • {activeTable.columns.length} columns
+                    </div>
+                    <button 
+                        onClick={() => setIsFullScreen(!isFullScreen)}
+                        className="p-1.5 text-neutral-400 hover:text-white hover:bg-neutral-800 rounded transition-colors"
+                        title={isFullScreen ? "Exit Full Screen" : "Full Screen"}
+                    >
+                        {isFullScreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
+                    </button>
                 </div>
             </div>
 
           {/* Actual Table Render */}
-          <div className="flex-1 overflow-auto">
+          <div className="flex-1 overflow-auto bg-black/20">
             <table className="w-full text-left border-collapse">
               <thead className="bg-black sticky top-0 z-10 shadow-sm shadow-neutral-950">
                 {/* Level 1 Header: Main Columns & Group Parents */}
