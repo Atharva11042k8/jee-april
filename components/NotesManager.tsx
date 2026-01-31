@@ -99,7 +99,7 @@ export const NotesManager: React.FC<NotesManagerProps> = ({ initialNotes }) => {
           />
         </div>
         <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0">
-          {(['All', 'Physics', 'Chemistry', 'Maths'] as const).map(sub => (
+          {(['All', 'Physics', 'Chemistry', 'Maths','miscillaneous'] as const).map(sub => (
             <button
               key={sub}
               onClick={() => setFilterSubject(sub)}
