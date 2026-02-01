@@ -68,6 +68,7 @@ export const NotesManager: React.FC<NotesManagerProps> = ({ initialNotes }) => {
       case 'Physics': return 'bg-cyan-950/30 text-cyan-400 border-cyan-900/50';
       case 'Chemistry': return 'bg-emerald-950/30 text-emerald-400 border-emerald-900/50';
       case 'Maths': return 'bg-rose-950/30 text-rose-400 border-rose-900/50';
+      case 'Miscellaneous': return 'bg-red-950/30 text-rose-400 border-rose-900/50';
     }
   };
 
@@ -111,7 +112,7 @@ export const NotesManager: React.FC<NotesManagerProps> = ({ initialNotes }) => {
           />
         </div>
         <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0">
-          {(['All', 'Physics', 'Chemistry', 'Maths'] as const).map(sub => (
+          {(['All', 'Physics', 'Chemistry', 'Maths','Miscellaneous'] as const).map(sub => (
             <button
               key={sub}
               onClick={() => setFilterSubject(sub)}
