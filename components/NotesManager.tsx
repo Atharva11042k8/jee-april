@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { LearningNote, Subject, MistakeType } from '../types';
-import { Search, Plus, Trash2, ChevronDown, ChevronUp, AlertCircle, CheckCircle2, Book } from 'lucide-react';
+import { Search, Plus, Trash2, ChevronDown, ChevronUp, AlertCircle, CheckCircle2, Book, Github } from 'lucide-react';
 
 interface NotesManagerProps {
   initialNotes: LearningNote[];
@@ -11,6 +11,8 @@ export const NotesManager: React.FC<NotesManagerProps> = ({ initialNotes }) => {
   const [isAdding, setIsAdding] = useState(false);
   const [search, setSearch] = useState('');
   const [filterSubject, setFilterSubject] = useState<Subject | 'All'>('All');
+  
+  const SECTION_GITHUB_URL = "https://github.com/notes";
 
   // Form State
   const [newNote, setNewNote] = useState<Partial<LearningNote>>({
@@ -66,7 +68,6 @@ export const NotesManager: React.FC<NotesManagerProps> = ({ initialNotes }) => {
       case 'Physics': return 'bg-cyan-950/30 text-cyan-400 border-cyan-900/50';
       case 'Chemistry': return 'bg-emerald-950/30 text-emerald-400 border-emerald-900/50';
       case 'Maths': return 'bg-rose-950/30 text-rose-400 border-rose-900/50';
-      case 'miscillaneous': return 'bg-blue-950/30 text-blue-400 border-blue-900/50';
     }
   };
 
@@ -78,12 +79,23 @@ export const NotesManager: React.FC<NotesManagerProps> = ({ initialNotes }) => {
           <h1 className="text-3xl font-bold text-neutral-100">Learning Logs</h1>
           <p className="text-neutral-500 mt-1">Capture every mistake, analyze every trap.</p>
         </div>
-        <button 
-          onClick={() => setIsAdding(true)}
-          className="flex items-center justify-center px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium transition-colors shadow-lg shadow-indigo-500/20"
-        >
-          <Plus className="w-5 h-5 mr-2" /> New Entry
-        </button>
+        <div className="flex items-center gap-3">
+          <a 
+            href={SECTION_GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="p-2 bg-neutral-900 border border-neutral-800 hover:bg-neutral-800 text-neutral-400 hover:text-white rounded-lg transition-colors"
+            title="View Notes Source"
+          >
+            <Github className="w-5 h-5" />
+          </a>
+          <button 
+            onClick={() => setIsAdding(true)}
+            className="flex items-center justify-center px-4 py-2 bg-indigo-600 hover:bg-indigo-500 text-white rounded-lg font-medium transition-colors shadow-lg shadow-indigo-500/20"
+          >
+            <Plus className="w-5 h-5 mr-2" /> New Entry
+          </button>
+        </div>
       </div>
 
       {/* Filters */}
@@ -99,7 +111,7 @@ export const NotesManager: React.FC<NotesManagerProps> = ({ initialNotes }) => {
           />
         </div>
         <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0">
-          {(['All', 'Physics', 'Chemistry', 'Maths','miscillaneous'] as const).map(sub => (
+          {(['All', 'Physics', 'Chemistry', 'Maths'] as const).map(sub => (
             <button
               key={sub}
               onClick={() => setFilterSubject(sub)}
@@ -128,7 +140,6 @@ export const NotesManager: React.FC<NotesManagerProps> = ({ initialNotes }) => {
               <option value="Physics">Physics</option>
               <option value="Chemistry">Chemistry</option>
               <option value="Maths">Maths</option>
-              <option value="miscillaneous">miscillaneous</option>
             </select>
             <input 
               placeholder="Chapter Name" 
