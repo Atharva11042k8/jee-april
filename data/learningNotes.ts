@@ -15,6 +15,27 @@ export const learningNotes = [
   },
   {
     "id": "2",
+    "subject": "Physics",
+    "chapter": "circular Motion",
+    "topic": "vertical circular motion",
+    "sourceType": "PYQ",
+    "mistakeType": "Conceptual",
+    "difficulty": "medium",
+    "tags": ["Mechanics", "2024"],
+    "mainNotes": "aahar question me bola hai ki perform vertical motion toh bottom pe velocity √4gl mat le lena",
+    "mistakeDescription": "aagar question me bola hai ki string slag at top, and perform vertical motion toh velocity at bottom is 5 not 4",
+    "correctApproach": "perform vertical motion me velocity is 5",
+    "date": "2026-02-01"
+  },
+
+
+
+
+
+
+  
+  {
+    "id": "2",
     "subject": "miscillaneous",
     "chapter": "",
     "topic": "",
@@ -27,4 +48,5 @@ export const learningNotes = [
     "correctApproach": "aagar kuch hint given nahi hai then assume it",
     "date": ""
   }
+  
 ];
