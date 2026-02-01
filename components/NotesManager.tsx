@@ -12,7 +12,7 @@ export const NotesManager: React.FC<NotesManagerProps> = ({ initialNotes }) => {
   const [search, setSearch] = useState('');
   const [filterSubject, setFilterSubject] = useState<Subject | 'All'>('All');
   
-  const SECTION_GITHUB_URL = "https://github.com/notes";
+  const SECTION_GITHUB_URL = "https://github.com/Atharva11042k8/jee-april/edit/main/data/learningNotes.ts";
 
   // Form State
   const [newNote, setNewNote] = useState<Partial<LearningNote>>({
