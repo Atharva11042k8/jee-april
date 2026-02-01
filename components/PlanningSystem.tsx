@@ -7,8 +7,8 @@ import { FileText, Grid, Github } from 'lucide-react';
 export const PlanningSystem: React.FC = () => {
   const [mode, setMode] = useState<'text' | 'table'>('table');
 
-  const GOALS_GITHUB_URL = "https://github.com/goals";
-  const TRACKERS_GITHUB_URL = "https://github.com/trackers";
+  const GOALS_GITHUB_URL = "https://github.com/Atharva11042k8/jee-april/edit/main/data/textPlans.ts";
+  const TRACKERS_GITHUB_URL = "https://github.com/Atharva11042k8/jee-april/edit/main/data/tables.ts";
 
   return (
     <div className="h-full flex flex-col space-y-6">
