@@ -27,6 +27,20 @@ export const learningNotes = [
     "correctApproach": "perform vertical motion me velocity is 5",
     "date": "2026-02-01"
   },
+  {
+    "id": "3",
+    "subject": "Physics",
+    "chapter": "heat",
+    "topic": "isobaric process",
+    "sourceType": "PYQ",
+    "mistakeType": "Conceptual",
+    "difficulty": "medium",
+    "tags": ["Mechanics", "2024"],
+    "mainNotes": "for a isobaric process : U=nCvT , Q=nCpT",
+    "mistakeDescription": "",
+    "correctApproach": "",
+    "date": "2026-02-03"
+  },
 
 
 
@@ -35,7 +49,7 @@ export const learningNotes = [
 
   
   {
-    "id": "2",
+    "id": "4",
     "subject": "miscillaneous",
     "chapter": "",
     "topic": "",
